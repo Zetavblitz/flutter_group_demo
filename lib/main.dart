@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// setup main app page
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -29,6 +30,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// main app page concrete behavior
 class _MyHomePageState extends State<MyHomePage> {
 
   // called when the matching button is pressed.
@@ -108,7 +110,15 @@ class _ErichPageState extends State<ErichPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(),
+        child: Column(
+          children: [
+            Image.network('https://media1.tenor.com/m/i4UKA0PCT8IAAAAd/dance-dog.gif'),
+            Text(
+              "The dog dancin!",
+              style: Theme.of(context).textTheme.headlineMedium,
+            )
+          ]
+        ),
       )
     );
   }
