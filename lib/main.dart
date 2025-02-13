@@ -30,7 +30,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  // called when the matching button is pressed.
   void _erichPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const ErichPage(title: "Erich's page!")),
+    );
   }
 
   @override
@@ -44,11 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+            // everything interesting is in here.
             Text(
               "What the dog doin?",
               style: Theme.of(context).textTheme.headlineMedium,
-              ),
+            ),
+
+            // column of buttons
             Column(children: [
+
+              // erich's button do not mess with this
               TextButton(
                 onPressed: _erichPage,
                 child: Column(
@@ -58,6 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+
+              // team members add names and behavior here
               TextButton(
                 onPressed: () => {},
                 child: Column(
@@ -71,6 +84,32 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+// setup for a new page
+class ErichPage extends StatefulWidget {
+  const ErichPage({super.key, required this.title});
+  final String title;
+
+  @override
+  State<ErichPage> createState() => _ErichPageState();
+}
+
+// implementation of a new page
+class _ErichPageState extends State<ErichPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(),
+      )
     );
   }
 }
