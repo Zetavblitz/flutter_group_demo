@@ -159,7 +159,7 @@ class _MarkPageState extends State<MarkPage> {
           Slider(
             value: _size,
             min: 50.0,
-            max: 150.0,
+            max: 300.0,
             onChanged: (value) {
               setState(() {
                 _size = value;
