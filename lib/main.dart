@@ -80,10 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // team members add names and behavior here
               TextButton(
-                onPressed: () => {},
+                onPressed: _markPage,
                 child: Column(
                   children: [
-                    const Text("Goin' to [name]'s page."),
+                    const Text("Goin' to Mark's page."),
                     const Icon(Icons.pets),
                   ],
                 )
