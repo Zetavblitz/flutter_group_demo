@@ -40,6 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _markPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const MarkPage(title: "Mark's page!")),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
