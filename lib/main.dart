@@ -129,3 +129,11 @@ class _ErichPageState extends State<ErichPage> {
     );
   }
 }
+
+class MarkPage extends StatefulWidget {
+    const MarkPage({super.key, required this.title});
+    final String title;
+
+    @override
+    State<MarkPage> createState() => _MarkPageState();
+  }
