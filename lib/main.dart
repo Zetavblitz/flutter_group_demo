@@ -137,3 +137,37 @@ class MarkPage extends StatefulWidget {
     @override
     State<MarkPage> createState() => _MarkPageState();
   }
+
+class _MarkPageState extends State<MarkPage> {
+  double _size = 100.0; // Initial size of the dog icon
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Dog Resizer")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Icon(
+              Icons.pets,
+              size: _size,
+              color: Colors.brown,
+            ),
+          ),
+          SizedBox(height: 20),
+          Slider(
+            value: _size,
+            min: 50.0,
+            max: 150.0,
+            onChanged: (value) {
+              setState(() {
+                _size = value;
+              });
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
